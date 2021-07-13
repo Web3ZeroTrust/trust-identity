@@ -1,0 +1,15 @@
+{
+    "slf4go": {
+        "default": {
+            "backend": "console"
+        }
+    },
+    "smf4go": {
+        "service": {
+            "identity.authenticator": {
+            },
+            "identity.SessionManager": {
+            }
+        }
+    }
+}
