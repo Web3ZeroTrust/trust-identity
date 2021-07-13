@@ -1,2 +1,2 @@
 # trust-identity
- Sign-In gateway service support advanced blockchain sign-in methods
+ Sign-In gateway support sign-in with eth-address / did / ens
