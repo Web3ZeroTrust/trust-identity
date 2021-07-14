@@ -7,6 +7,7 @@ import (
 	"github.com/libs4go/smf4go"
 	"github.com/libs4go/smf4go/app"
 	"github.com/libs4go/smf4go/service/localservice"
+	"github.com/web3zerotrust/trust-identity/app/httproxy"
 	"github.com/web3zerotrust/trust-identity/auth"
 	"github.com/web3zerotrust/trust-identity/session/localsession"
 )
@@ -17,9 +18,13 @@ func main() {
 		return auth.New(config)
 	})
 
-	localservice.Register("identity.SessionManager", func(config scf4go.Config) (smf4go.Service, error) {
+	localservice.Register("identity.sessionManager", func(config scf4go.Config) (smf4go.Service, error) {
 		return localsession.New(config)
 	})
 
-	app.Run("httpproxy")
+	localservice.Register("identity.httproxy", func(config scf4go.Config) (smf4go.Service, error) {
+		return httproxy.New(config)
+	})
+
+	app.Run("httproxy")
 }

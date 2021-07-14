@@ -12,7 +12,7 @@ import (
 
 type authenticatorImpl struct {
 	slf4go.Logger
-	SessionManager identity.SessionManager `inject:"identity.SessionManager"`
+	SessionManager identity.SessionManager `inject:"identity.sessionManager"`
 	node           *snowflake.Node
 }
 
